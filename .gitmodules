@@ -1,0 +1,3 @@
+[submodule "fedora/OsSetup/dotfiles"]
+	path = fedora/OsSetup/dotfiles
+	url = git@github.com:huangming/dotfiles.git
