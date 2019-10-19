@@ -1,4 +1,10 @@
+#!/bin/bash
+
 #sudo dnf update & upgrade;
+
+if [ !-d "~/tmp"];then
+    mkdir ~/tmp
+fi
 
 sudo dnf install git-core;
 

@@ -12,9 +12,13 @@ fi
 echo "Installing aptitude and base packages."
 sudo dnf update & upgrade
 
-./fedora-install.sh
+./fedora-dnf-install.sh
+
+### Set cinnamon desktop
+./fedora-cinnamon-settings.sh
 
 ### Set gnome-terminal
-./fedora-settings.sh
+./fedora-gnome-terminal-settings.sh
+
 
 
