@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#sudo dnf update & upgrade;
+# sudo dnf update & upgrade;
 
-if [ !-d "~/tmp"];then
+if [[ ! -d "~/tmp" ]];then
     mkdir ~/tmp
 fi
 
@@ -18,7 +18,7 @@ gsettings set org.gnome.nautilus.icon-view default-zoom-level small;
 # app launcher;set keyboard shortcuts command:rofi -show drun -show-icons
 sudo dnf install rofi;
 
-sudo dnf install ibus-rime;
+# sudo dnf install ibus-rime;
 
 sudo dnf install gnome-tweak-tool;
 
@@ -34,13 +34,13 @@ sudo dnf install vim-X11;
 wget -c -P ~/tmp/ https://wdl1.cache.wps.cn/wps/download/ep/Linux2019/8722/wps-office-11.1.0.8722-1.x86_64.rpm;
 sudo dnf install ~/tmp/wps-office-11.1.0.8722-1.x86_64.rpm;
 
-wget -c -P ~/tmp/ https://download.virtualbox.org/virtualbox/6.0.10/VirtualBox-6.0-6.0.10_132072_fedora29-1.x86_64.rpm;
-sudo dnf install ~/tmp/VirtualBox-6.0-6.0.10_132072_fedora29-1.x86_64.rpm;
+#wget -c -P ~/tmp/ https://download.virtualbox.org/virtualbox/6.0.10/VirtualBox-6.0-6.0.10_132072_fedora29-1.x86_64.rpm;
+#sudo dnf install ~/tmp/VirtualBox-6.0-6.0.10_132072_fedora29-1.x86_64.rpm;
 
 #pannel applet:ScreenShot+Record Desktop
 #sudo install ffmpeg xdotool x11-utils;
 
-sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-30.noarch.rpm;
+#sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-30.noarch.rpm;
 
 #sudo dnf install https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.rpm;
 #sudo dnf install kernel-devel kernel-devel-5.2.9-200.fc30.x86_64;
@@ -65,4 +65,17 @@ sudo dnf install code;
 
 # dotfiles manager;symlink farm manager;
 sudo dnf install stow;
+
+# dconf-editor
+sudo yum install dconf-editor
+
+# oh-my-zsh
+sudo dnf install zsh;
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)";
+git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k;
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting;
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions;
+# set $ZSH_CUSTOM=~/.oh-my-zsh/custom;
+git clone https://github.com/denysdovhan/spaceship-prompt.git "~/.oh-my-zsh/themes/spaceship-prompt";
+ln -s "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship-prompt/spaceship.zsh-theme" "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship.zsh-theme";
 

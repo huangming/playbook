@@ -18,11 +18,31 @@ gsettings set org.gnome.desktop.interface gtk-im-module 'gtk-im-context-simple'
 # screensaver
 # gsettings set org.gnome.desktop.screensaver picture-uri "file:///usr/share/wallpapers/01/52.jpg"
 
+# Whether to play sounds on user events.
+gsettings set org.cinnamon.desktop.sound event-sounds false
+
 #Enable toggle keys sounds when num or capslock are changed
 gsettings set org.cinnamon.desktop.a11y.keyboard togglekeys-enable-beep true
 
+gsettings set org.cinnamon.sounds login-enabled false
+gsettings set org.cinnamon.sounds map-enabled false
+gsettings set org.cinnamon.sounds maximize-enabled false
+gsettings set org.cinnamon.sounds switch-enabled false
+gsettings set org.cinnamon.sounds notification-enabled false
+gsettings set org.cinnamon.sounds tile-enabled false
+gsettings set org.cinnamon.sounds minimize-enabled false
+gsettings set org.cinnamon.sounds close-enabled false
+gsettings set org.cinnamon.sounds unmaximize-enabled false
+gsettings set org.cinnamon.sounds logout-enabled true
+gsettings set org.cinnamon.sounds unplug-enabled true
+gsettings set org.cinnamon.sounds plug-enabled true
+
 #Enable toggle keys osd popups when num or capslock are changed
 gsettings set org.cinnamon.desktop.a11y.keyboard togglekeys-enable-osd true
+
+# Configure bluetooth
+gsettings set org.blueberry tray-enabled true
+gsettings set org.blueberry obex-enabled false
 
 #background picture
 gsettings set org.cinnamon.desktop.background.slideshow image-source "directory://$wallpaper_path"
@@ -39,6 +59,14 @@ gsettings set org.cinnamon.desktop.interface icon-theme 'Mint-Y-Dark-Aqua'
 
 # Size of icons in toolbars, either "small" or "large".
 gsettings set org.cinnamon.desktop.interface toolbar-icons-size small
+
+gsettings set org.nemo.desktop computer-icon-visible false
+gsettings set org.nemo.desktop trash-icon-visible true
+gsettings set org.nemo.desktop home-icon-visible true
+gsettings set org.cinnamon.muffin desktop-effects false
+gsettings set org.cinnamon desktop-effects-on-menus false
+gsettings set org.cinnamon desktop-effects-on-dialogs false
+gsettings set org.cinnamon startup-animation false
 
 # keybindings start----------------------------------------------------------------------
 # custom keybindings
@@ -116,12 +144,11 @@ gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-10 "['<Shift
 
 # List of x-content/* types for which the user have chosen "Do Nothing" in the preference capplet. No prompt will be shown nor will any matching application be started on insertion of media matching these types.
 gsettings set org.cinnamon.desktop.media-handling autorun-x-content-ignore "['x-content/image-dcf']"
+# gsettings set org.cinnamon.desktop.media-handling automount "false"
+gsettings set org.cinnamon.desktop.media-handling automount-open "false" 
 
 # This is the message that appears on the lock screen by default.
 # gsettings set org.cinnamon.desktop.screensaver default-message "hello world"
-
-# Whether to play sounds on user events.
-gsettings set org.cinnamon.desktop.sound event-sounds false
 
 # The action to take when the laptop lid is closed and the laptop is on AC power.
 gsettings set org.cinnamon.settings-daemon.plugins.power lid-close-ac-action blank
