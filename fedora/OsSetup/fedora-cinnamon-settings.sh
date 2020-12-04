@@ -112,6 +112,9 @@ gsettings set org.cinnamon.desktop.keybindings.media-keys terminal "['<Super>t']
 # Super+w to lauch web browser
 gsettings set org.cinnamon.desktop.keybindings.media-keys www "['<Super>w']"
 
+gsettings set org.cinnamon.desktop.keybindings.wm maximize "['<Alt><Super>Up']"
+gsettings set org.cinnamon.desktop.keybindings.wm unmaximize "['<Control><Super>Down']"
+gsettings set org.cinnamon.desktop.keybindings.wm minimize "['<Alt><Super>Down']"
 # Number of workspaces. Must be more than zero, and has a fixed maximum to prevent making the desktop unusable by accidentally asking for too many workspaces.
 gsettings set org.cinnamon.desktop.wm.preferences num-workspaces 10
 

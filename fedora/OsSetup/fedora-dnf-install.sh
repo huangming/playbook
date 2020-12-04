@@ -63,6 +63,8 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 sudo dnf check-update;
 sudo dnf install code;
 
+sudo dnf install ansible
+
 # dotfiles manager;symlink farm manager;
 sudo dnf install stow;
 
