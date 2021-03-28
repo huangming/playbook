@@ -74,6 +74,11 @@ sudo chsh -s $(which zsh);
 
 sudo apt install libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf xutils-dev libtool
 git clone https://github.com/Airblader/i3 ~/tmp/i3-gaps
+cd i3-gaps
+mkdir build
+cd build
+meson
+
 
 sudo apt-get -y install dmenu feh i3bar i3lock;
 # sudo apt install -y i3-wm
@@ -112,6 +117,11 @@ sudo apt install peek
 sudo apt install key-mon
 
 sudo apt-get install -y gvfs-bin python3-gi gir1.2-appindicator3-0.1;
+sudo apt-get install python-pip
+sudo apt-get install python3-pip
+sudo apt-get install fonts-powerline
+sudo apt-get install fonts-font-awesome
+
 wget -c -P ~/tmp https://www.jianguoyun.com/static/exe/installer/nutstore_linux_dist_x64.tar.gz
 mkdir -p ~/.nutstore/dist && tar zxf ~/tmp/nutstore_linux_dist_x64.tar.gz -C ~/.nutstore/dist
 ~/.nutstore/dist/bin/install_core.sh
@@ -130,7 +140,14 @@ sudo dpkg -i ~/tmp/wps-office_11.1.0.10161.XA_amd64.deb;
 #sudo /sbin/vboxconfig;
 
 wget -c -P ~/tmp/ https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i google-chrome-stable_current_amd64.deb 
+sudo dpkg -i ~/tmp/google-chrome-stable_current_amd64.deb 
+
+echo "deb [arch=amd64] https://qv2ray.net/debian/ stable main" | sudo tee /etc/apt/sources.list.d/qv2ray.list
+sudo apt-get install qv2ray
+curl -sSL https://github.com/v2fly/v2ray-core/releases/download/v4.36.2/v2ray-linux-64.zip -o ~/tmp/v2ray-linux-64.zip
+
+wget -c -P ~/tmp https://dl2.xmind.cn/XMind-2020-for-Linux-amd-64bit-10.3.1-202101132117.deb
+sudo dpkg -i ~/tmp/XMind-2020-for-Linux-amd-64bit-10.3.1-202101132117.deb
 
 #video
 sudo apt install vlc
