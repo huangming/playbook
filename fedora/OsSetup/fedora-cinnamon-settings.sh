@@ -133,6 +133,9 @@ gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-8 "['<Supe
 gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-9 "['<Super>9']"
 gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-10 "['<Super>0']"
 
+gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-left "['<Control><Super>Left']"
+gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-right "['<Control><Super>Right']"
+
 # Super+shift+num Move window to workspace num
 gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-1 "['<Shift><Super>exclam']"
 gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-2 "['<Shift><Super>at']"

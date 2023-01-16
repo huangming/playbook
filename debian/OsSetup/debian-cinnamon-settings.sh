@@ -3,7 +3,8 @@
 set -x
 
 wallpaper_path="/home/hm/Nutstore/pictures/collect/wallpapers/01"
-background_image_source="${wallpaper_path}/23.jpg"
+#background_image_source="${wallpaper_path}/23.jpg"
+background_image_source="${wallpaper_path}/screenlock.jpg"
 updbackground_script_path="/home/hm/tools/updbackground.sh"
 transparent_terminal_script_path="/home/hm/tools/transparent-terminal.sh"
 
@@ -17,6 +18,9 @@ gsettings set org.gnome.desktop.interface gtk-im-module 'gtk-im-context-simple'
 
 # screensaver
 # gsettings set org.gnome.desktop.screensaver picture-uri "file:///usr/share/wallpapers/01/52.jpg"
+
+# disable download gnome updates(packagekitd)
+gsettings set org.gnome.software.download-updates false
 
 # Whether to play sounds on user events.
 gsettings set org.cinnamon.desktop.sound event-sounds false
@@ -82,7 +86,7 @@ gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/d
 gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom1/ binding "['<Primary><Alt>Delete']"
 gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom1/ command 'cinnamon-session-quit --power-off'
 
-# Alt+R to quick launch
+# Super+R to quick launch
 gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom2/ name 'run dialog'
 gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom2/ binding "['<Super>r']"
 gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom2/ command 'rofi -show drun -show-icons'
@@ -108,6 +112,9 @@ gsettings set org.cinnamon.desktop.keybindings.media-keys shutdown "['<Primary><
 
 # Binding Super+t to launch the terminal.
 gsettings set org.cinnamon.desktop.keybindings.media-keys terminal "['<Super>t']"
+
+# Binding Ctrl+Shift+, to launch the terminal config.
+gsettings set org.cinnamon.desktop.keybindings.media-keys terminal "['<Control><Shift>,']"
 
 # Super+w to lauch web browser
 gsettings set org.cinnamon.desktop.keybindings.media-keys www "['<Super>w']"

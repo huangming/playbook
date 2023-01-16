@@ -93,8 +93,11 @@ sudo unzip ~/tmp/JetBrainsMono-1.0.3.zip -d /usr/share/fonts/
 
 # app launcher;set keyboard shortcuts command:rofi -show drun -show-icons
 sudo apt install -y rofi;
-sudo apt install ranger
-
+sudo apt install ranger;
+sudo apt install -y highlight;
+sudo apt install -y atool;
+sudo apt install -y docx2txt;
+sudo apt install -y xlsx2csv;
 
 sudo apt install laptop-mode-tools
 
@@ -132,13 +135,20 @@ sudo sysctl -p /etc/sysctl.conf
 wget -c -P ~/tmp/ https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/10161/wps-office_11.1.0.10161.XA_amd64.deb;
 sudo dpkg -i ~/tmp/wps-office_11.1.0.10161.XA_amd64.deb;
 
-#wget -c -P ~/tmp/ https://download.virtualbox.org/virtualbox/6.0.10/VirtualBox-6.0-6.0.10_132072_fedora29-1.x86_64.rpm;
-#sudo apt install ~/tmp/VirtualBox-6.0-6.0.10_132072_fedora29-1.x86_64.rpm;
+#vbox
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+sudo apt-get install virtualbox-6.1
 
-#sudo apt install https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.rpm;
-#sudo apt install kernel-devel kernel-devel-5.2.9-200.fc30.x86_64;
-#sudo /sbin/vboxconfig;
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -\n\n
+ sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"\n\n
+ sudo apt-get update && sudo apt-get install vagrant
 
+ #edge
+sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge-dev.list'
+sudo apt install microsoft-edge-dev
+
+#chrome
 wget -c -P ~/tmp/ https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i ~/tmp/google-chrome-stable_current_amd64.deb 
 
@@ -191,8 +201,15 @@ sudo curl -L https://github.com/docker/compose/releases/download/1.24.1/docker-c
 sudo chmod +x /usr/local/bin/docker-compose
 ## Setting docker-compose
 sudo usermod -aG docker $(whoami)
+sudo apt-get install setfacl
 sudo setfacl -m $USER:$USER:rw /var/run/docker.sock
 sudo addgroup --system docker
 sudo adduser $USER docker
 docker-compose --version
 echo "\n\n"
+
+sudo apt-get install bc
+sudo apt-get install jq
+
+sudo apt-get install rdesktop
+sudo apt-get install UxPlay
